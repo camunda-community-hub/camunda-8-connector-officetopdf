@@ -27,7 +27,7 @@
         <mockito.version>4.7.0</mockito.version>
         <slf4j.version>1.7.36</slf4j.version>
 
-        <opensagres.version>2.0.3</opensagres.version>
+        <opensagres.version>2.0.4</opensagres.version>
 
         <!-- maven plugins -->
         <plugin.version.maven-clean-plugin>3.2.0</plugin.version.maven-clean-plugin>
