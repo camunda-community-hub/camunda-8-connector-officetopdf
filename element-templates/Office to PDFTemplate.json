@@ -1,0 +1,155 @@
+[
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+    "name": "Office to PDF",
+    "icon": {
+      "contents": "data:image/svg+xml,%3C?xml version\u003d\u00271.0\u0027 encoding\u003d\u0027UTF-8\u0027 standalone\u003d\u0027no\u0027?%3E%3Csvg   xmlns:dc\u003d\u0027http://purl.org/dc/elements/1.1/\u0027   xmlns:cc\u003d\u0027http://creativecommons.org/ns%23\u0027   xmlns:rdf\u003d\u0027http://www.w3.org/1999/02/22-rdf-syntax-ns%23\u0027   xmlns:svg\u003d\u0027http://www.w3.org/2000/svg\u0027   xmlns\u003d\u0027http://www.w3.org/2000/svg\u0027   viewBox\u003d\u00270 0 18 18\u0027   version\u003d\u00271.1\u0027   id\u003d\u0027svg69\u0027   width\u003d\u002718\u0027   height\u003d\u002718\u0027%3E  %3Cmetadata     id\u003d\u0027metadata73\u0027%3E    %3Crdf:RDF%3E      %3Ccc:Work         rdf:about\u003d\u0027\u0027%3E        %3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E        %3Cdc:type           rdf:resource\u003d\u0027http://purl.org/dc/dcmitype/StillImage\u0027 /%3E        %3Cdc:title%3E%3C/dc:title%3E      %3C/cc:Work%3E    %3C/rdf:RDF%3E  %3C/metadata%3E  %3Cdefs     id\u003d\u0027defs43\u0027%3E    %3Cstyle       id\u003d\u0027style2\u0027%3E          .cls-1%7B     isolation:isolate;    %7D    .cls-2%7B     opacity:0.2;    %7D    .cls-2,.cls-3,.cls-5%7B     mix-blend-mode:multiply;    %7D    .cls-4%7B     fill:%23fff;    %7D    .cls-5%7B     opacity:0.12;    %7D    .cls-6%7B     fill:url(%23linear-gradient);    %7D    .cls-7%7B     fill:url(%23linear-gradient-2);    %7D    .cls-8%7B     fill:url(%23linear-gradient-3);    %7D    .cls-9%7B     fill:url(%23linear-gradient-4);    %7D    .cls-10%7B     fill:url(%23linear-gradient-5);    %7D    .cls-11%7B     fill:none;    %7D  %3C/style%3E    %3ClinearGradient       id\u003d\u0027linear-gradient\u0027       x1\u003d\u002745.200001\u0027       y1\u003d\u0027-1.42\u0027       x2\u003d\u002745.200001\u0027       y2\u003d\u002757.799999\u0027       gradientUnits\u003d\u0027userSpaceOnUse\u0027%3E      %3Cstop         offset\u003d\u00270\u0027         stop-color\u003d\u0027%23ffb900\u0027         id\u003d\u0027stop4\u0027 /%3E      %3Cstop         offset\u003d\u00270.17\u0027         stop-color\u003d\u0027%23ef8400\u0027         id\u003d\u0027stop6\u0027 /%3E      %3Cstop         offset\u003d\u00270.31\u0027         stop-color\u003d\u0027%23e25c01\u0027         id\u003d\u0027stop8\u0027 /%3E      %3Cstop         offset\u003d\u00270.43\u0027         stop-color\u003d\u0027%23db4401\u0027         id\u003d\u0027stop10\u0027 /%3E      %3Cstop         offset\u003d\u00270.5\u0027         stop-color\u003d\u0027%23d83b01\u0027         id\u003d\u0027stop12\u0027 /%3E    %3C/linearGradient%3E    %3ClinearGradient       id\u003d\u0027linear-gradient-2\u0027       x1\u003d\u002734.52\u0027       y1\u003d\u00270.67000002\u0027       x2\u003d\u00273.1600001\u0027       y2\u003d\u002745.450001\u0027       gradientUnits\u003d\u0027userSpaceOnUse\u0027%3E      %3Cstop         offset\u003d\u00270\u0027         stop-color\u003d\u0027%23800600\u0027         id\u003d\u0027stop15\u0027 /%3E      %3Cstop         offset\u003d\u00270.6\u0027         stop-color\u003d\u0027%23c72127\u0027         id\u003d\u0027stop17\u0027 /%3E      %3Cstop         offset\u003d\u00270.73\u0027         stop-color\u003d\u0027%23c13959\u0027         id\u003d\u0027stop19\u0027 /%3E      %3Cstop         offset\u003d\u00270.85\u0027         stop-color\u003d\u0027%23bc4b81\u0027         id\u003d\u0027stop21\u0027 /%3E      %3Cstop         offset\u003d\u00270.94\u0027         stop-color\u003d\u0027%23b95799\u0027         id\u003d\u0027stop23\u0027 /%3E      %3Cstop         offset\u003d\u00271\u0027         stop-color\u003d\u0027%23b85ba2\u0027         id\u003d\u0027stop25\u0027 /%3E    %3C/linearGradient%3E    %3ClinearGradient       id\u003d\u0027linear-gradient-3\u0027       x1\u003d\u002718.5\u0027       y1\u003d\u002755.630001\u0027       x2\u003d\u002759.439999\u0027       y2\u003d\u002755.630001\u0027       gradientUnits\u003d\u0027userSpaceOnUse\u0027%3E      %3Cstop         offset\u003d\u00270\u0027         stop-color\u003d\u0027%23f32b44\u0027         id\u003d\u0027stop28\u0027 /%3E      %3Cstop         offset\u003d\u00270.6\u0027         stop-color\u003d\u0027%23a4070a\u0027         id\u003d\u0027stop30\u0027 /%3E    %3C/linearGradient%3E    %3ClinearGradient       id\u003d\u0027linear-gradient-4\u0027       x1\u003d\u002735.16\u0027       y1\u003d\u0027-0.23999999\u0027       x2\u003d\u002728.52\u0027       y2\u003d\u00279.2399998\u0027       gradientUnits\u003d\u0027userSpaceOnUse\u0027%3E      %3Cstop         offset\u003d\u00270\u0027         stop-opacity\u003d\u00270.4\u0027         id\u003d\u0027stop33\u0027 /%3E      %3Cstop         offset\u003d\u00271\u0027         stop-opacity\u003d\u00270\u0027         id\u003d\u0027stop35\u0027 /%3E    %3C/linearGradient%3E    %3ClinearGradient       id\u003d\u0027linear-gradient-5\u0027       x1\u003d\u002746.32\u0027       y1\u003d\u002756.549999\u0027       x2\u003d\u002727.99\u0027       y2\u003d\u002754.950001\u0027       gradientUnits\u003d\u0027userSpaceOnUse\u0027%3E      %3Cstop         offset\u003d\u00270\u0027         stop-opacity\u003d\u00270.4\u0027         id\u003d\u0027stop38\u0027 /%3E      %3Cstop         offset\u003d\u00271\u0027         stop-opacity\u003d\u00270\u0027         id\u003d\u0027stop40\u0027 /%3E    %3C/linearGradient%3E  %3C/defs%3E  %3Cg     class\u003d\u0027cls-1\u0027     id\u003d\u0027g67\u0027     transform\u003d\u0027scale(0.28125)\u0027%3E    %3Cg       id\u003d\u0027Icons_-_Color\u0027       data-name\u003d\u0027Icons - Color\u0027%3E      %3Cg         id\u003d\u0027Desktop_-_Full_Bleed\u0027         data-name\u003d\u0027Desktop - Full Bleed\u0027%3E        %3Cg           class\u003d\u0027cls-2\u0027           id\u003d\u0027g47\u0027%3E          %3Cpath             class\u003d\u0027cls-4\u0027             d\u003d\u0027m 19.93,49 a 3.22,3.22 0 0 0 -1.59,6 L 29.7,61.44 A 6.2,6.2 0 0 0 32.77,62.25 6,6 0 0 0 34.48,62 L 51.57,57.13 A 6.12,6.12 0 0 0 56,51.26 V 49 Z\u0027             id\u003d\u0027path45\u0027 /%3E        %3C/g%3E        %3Cg           class\u003d\u0027cls-5\u0027           id\u003d\u0027g51\u0027%3E          %3Cpath             class\u003d\u0027cls-4\u0027             d\u003d\u0027m 19.93,49 a 3.22,3.22 0 0 0 -1.59,6 L 29.7,61.44 A 6.2,6.2 0 0 0 32.77,62.25 6,6 0 0 0 34.48,62 L 51.57,57.13 A 6.12,6.12 0 0 0 56,51.26 V 49 Z\u0027             id\u003d\u0027path49\u0027 /%3E        %3C/g%3E        %3Cpath           class\u003d\u0027cls-6\u0027           d\u003d\u0027M 34.41,2 39,12.5 V 49 L 34.48,62 51.57,57.13 A 6.12,6.12 0 0 0 56,51.26 V 12.74 A 6.11,6.11 0 0 0 51.56,6.86 Z\u0027           id\u003d\u0027path53\u0027           style\u003d\u0027fill:url(%23linear-gradient)\u0027 /%3E        %3Cpath           class\u003d\u0027cls-7\u0027           d\u003d\u0027m 12.74,48.61 5,-2.7 A 4.36,4.36 0 0 0 20,42.08 V 22.43 a 4.37,4.37 0 0 1 2.87,-4.1 L 39,12.5 V 8.07 A 6.32,6.32 0 0 0 34.41,2 6.18,6.18 0 0 0 32.68,1.76 v 0 A 6.41,6.41 0 0 0 29.54,2.59 L 11.08,13.12 A 6.1,6.1 0 0 0 8,18.42 v 27.36 a 3.21,3.21 0 0 0 4.74,2.83 z\u0027           id\u003d\u0027path55\u0027           style\u003d\u0027fill:url(%23linear-gradient-2)\u0027 /%3E        %3Cpath           class\u003d\u0027cls-8\u0027           d\u003d\u0027M 39,49 H 19.93 a 3.22,3.22 0 0 0 -1.59,6 l 11.36,6.44 a 6.2,6.2 0 0 0 3.07,0.81 v 0 A 6,6 0 0 0 34.48,62 6.22,6.22 0 0 0 39,56 Z\u0027           id\u003d\u0027path57\u0027           style\u003d\u0027fill:url(%23linear-gradient-3)\u0027 /%3E        %3Cpath           class\u003d\u0027cls-9\u0027           d\u003d\u0027m 12.74,48.61 5,-2.7 A 4.36,4.36 0 0 0 20,42.08 V 22.43 a 4.37,4.37 0 0 1 2.87,-4.1 L 39,12.5 V 8.07 A 6.32,6.32 0 0 0 34.41,2 6.18,6.18 0 0 0 32.68,1.76 v 0 A 6.41,6.41 0 0 0 29.54,2.59 L 11.08,13.12 A 6.1,6.1 0 0 0 8,18.42 v 27.36 a 3.21,3.21 0 0 0 4.74,2.83 z\u0027           id\u003d\u0027path59\u0027           style\u003d\u0027fill:url(%23linear-gradient-4)\u0027 /%3E        %3Cpath           class\u003d\u0027cls-10\u0027           d\u003d\u0027M 39,49 H 19.93 a 3.22,3.22 0 0 0 -1.59,6 l 11.36,6.44 a 6.2,6.2 0 0 0 3.07,0.81 v 0 A 6,6 0 0 0 34.48,62 6.22,6.22 0 0 0 39,56 Z\u0027           id\u003d\u0027path61\u0027           style\u003d\u0027fill:url(%23linear-gradient-5)\u0027 /%3E        %3Crect           class\u003d\u0027cls-11\u0027           width\u003d\u002764\u0027           height\u003d\u002764\u0027           id\u003d\u0027rect63\u0027           x\u003d\u00270\u0027           y\u003d\u00270\u0027 /%3E      %3C/g%3E    %3C/g%3E  %3C/g%3E  %3Cg     id\u003d\u0027g117\u0027     transform\u003d\u0027matrix(0.23089663,0,0,0.23089663,6.2055391,7.0903316)\u0027%3E    %3Cpath       d\u003d\u0027m 16.7328,13.29858 c -0.1476,1.8864 -1.6524,2.7918 -1.9584,2.9574 -1.629,0.8892 -4.3704,0.5796 -5.6952001,-1.2852 -0.7308,-1.026 -1.098,-2.6586 -0.387,-3.789 l 0.009,-0.018 c 0.2556,-0.4158 0.8478,-1.1178 1.9404001,-1.1412 h 0.0396 c 0.3906,0 0.8406,0.1188 1.2384,0.2232 0.279,0.0738 0.5202,0.1368 0.7002,0.1494 0.1134,0.0072 0.2754,-0.0216 0.4806,-0.0576 0.6138,-0.108 1.638,-0.288 2.5344,0.3456 1.2204,0.865801 1.1052,2.5452 1.098,2.6154 z\u0027       id\u003d\u0027path89\u0027       style\u003d\u0027fill:%23aa0000;fill-opacity:1\u0027 /%3E    %3Cpath       d\u003d\u0027m 9.2718,10.287181 c -0.351,0.2484 -0.5832,0.5562 -0.7236,0.783 l -0.009,0.0144 c -0.3636001,0.5796 -0.4644,1.2528 -0.3960001,1.9116 -0.0072,0.0036 -0.0144,0.0072 -0.0198,0.0126 -1.3338001,1.089 -2.8404,0.8082 -3.4254003,0.6372 l -0.0342,-0.009 c -1.8630002,-0.4644 -3.70259996,-2.4768 -3.3642,-4.6206 0.1872,-1.1808001 1.08,-2.538 2.4264,-2.8476 0.2322,-0.054 1.4454,-0.279 2.421,0.5382 0.2988,0.252 0.5202,0.6192001 0.7146,0.9432 0.1386,0.234 0.2592,0.4338 0.3906001,0.5652 0.0846,0.0846 0.2322,0.1674 0.4194,0.2736 0.549,0.3078001 1.3770001,0.7740001 1.5930002,1.7784 0.0018,0.0072 0.0036,0.0144 0.0072,0.0198 z\u0027       id\u003d\u0027path91\u0027       style\u003d\u0027fill:%23aa0000;fill-opacity:1\u0027 /%3E    %3Cpath       d\u003d\u0027m 12.9294,10.18638 c -0.1062,0.018 -0.1998,0.0306 -0.2664,0.0306 -0.0108,0 -0.0216,-0.0018 -0.0306,-0.0018 -0.0504,-0.0036 -0.1098,-0.0108 -0.1728,-0.0234 0.5526,-1.4112 0.7812,-3.6684 -1.1394,-6.5268 -0.0036,-0.0072 -0.009,-0.0126 -0.0162,-0.018 0.1116,-0.4428 0.1494,-0.7524 0.1584,-0.828 0.0054,-0.0504 -0.0306,-0.0936 -0.0792,-0.099 -0.0504,-0.0072 -0.0936,0.0306 -0.099,0.0792 -0.0216,0.1926 -0.2376,1.9296001 -1.4490001,3.4722004 -0.7578001,0.9648001 -1.9512001,1.6830001 -2.3634002,1.8882 -0.0378,-0.0252 -0.0702,-0.0504 -0.0918,-0.072 -0.0594,-0.0594 -0.117,-0.1368 -0.1764,-0.2286 0.0342,-0.018 0.0702,-0.0378 0.108,-0.0576 0.4302,-0.2304 1.1502,-0.6138001 2.0286002,-1.5336001 1.0386001,-1.0872 1.2366001,-2.7522001 0.9450001,-3.2058 -0.1404,-0.2196 -0.3654001,-0.2412 -0.5454001,-0.2574 -0.2358,-0.0198 -0.378,-0.0342 -0.4032,-0.3546 -0.0234,-0.279 0.108,-0.5256 0.369,-0.6912 0.3510001,-0.225 0.9792001,-0.297 1.5876001,0.0486 0.3798,0.2142 0.3762,0.5796 0.3744,0.9324 -0.0018,0.2358 -0.0036,0.459 0.1134,0.6192 l 0.0504,0.0684 c 0.288,0.3906001 0.9612,1.3014001 1.3644,2.8908 C 13.626,8.01918 13.2192,9.56898 12.9294,10.18638 Z\u0027       id\u003d\u0027path93\u0027       style\u003d\u0027fill:%23502d16;fill-opacity:1\u0027 /%3E    %3Cpath       d\u003d\u0027m 7.6338,2.8045802 c -0.0144,0.0072 -0.0288,0.0108 -0.0432,0.0108 -0.0324,0 -0.063,-0.018 -0.0792,-0.0468 -0.0018,-0.0018 -0.1278,-0.2268 -0.3546,-0.4338 -0.0378,-0.0324 -0.0396,-0.09 -0.0072,-0.126 0.0342,-0.0378 0.09,-0.0396 0.1278,-0.0072 0.2502,0.2268 0.3852,0.4698 0.3906,0.4806 0.025201,0.0432 0.009,0.0972 -0.0342,0.1224 z\u0027       id\u003d\u0027path95\u0027 /%3E    %3Cpath       d\u003d\u0027m 7.8156,4.51998 c -0.1872,0.2214 -0.2844,0.261 -0.432,0.3204 l -0.0468,0.0198 c -0.0108,0.0054 -0.0234,0.0072 -0.0342,0.0072 -0.036,0 -0.0684,-0.0216 -0.0828,-0.0558 -0.0198,-0.045 0.0018,-0.099 0.0486,-0.117 l 0.0468,-0.0198 c 0.135,-0.0558 0.2034,-0.0846 0.3636,-0.27 0.0324,-0.0396 0.09,-0.0432 0.1278,-0.0108 0.0378,0.0324 0.0414,0.0882 0.009,0.126 z\u0027       id\u003d\u0027path97\u0027 /%3E    %3Cpath       d\u003d\u0027m 10.134,3.1591802 c -0.0468,-0.0738 -0.108,-0.1134 -0.1764,-0.135 -0.2394,0.3222 -1.0818001,0.81 -1.9278,0.81 -0.225,0 -0.4518,-0.0342 -0.666,-0.1152 -0.576,-0.2196 -0.9702,-0.5256 -1.3518001,-0.8208 -0.3024,-0.2358 -0.5886,-0.4572 -0.9378,-0.6084001 -0.0468,-0.0216 -0.0666,-0.0738 -0.0468,-0.1188 0.0198,-0.0468 0.072,-0.0666 0.1188,-0.0468 0.369,0.162 0.6642,0.3888001 0.9756,0.6318 0.3708,0.2880001 0.756,0.5850001 1.3050001,0.7938 0.5598,0.2124 1.1880001,0.0738 1.6650001,-0.1404 -0.2052,-0.6336 -1.5318002,-2.56139997 -3.7188,-2.0700002 -0.3384,0.0756 -0.6336,0.1458 -0.8928,0.207 -1.098,0.2574 -1.5678,0.3672001 -2.0556002,0.2376 0.045,0.2268001 0.1638,0.4194 0.3528,0.5742001 0.378,0.3042 0.927,0.3798 1.1880001,0.3834 C 3.8322,2.59038 3.69,2.49318 3.5154,2.43198 3.4686,2.41578 3.4434,2.36538 3.4596,2.31858 c 0.0162,-0.0486 0.0684,-0.072 0.1152,-0.0558 0.567,0.1998 0.828,0.7074 1.2492001,1.7424002 0.441,1.0836 1.9836001,2.0934 3.2346,1.7190001 1.2744,-0.3816 1.2528001,-1.7244 1.251,-1.7388 0,-0.036 0.0216,-0.0702 0.054,-0.0846 0.0846,-0.0378 0.5184,-0.2358 0.8243999,-0.5238 0.0054,-0.0054 0.0108,-0.009 0.0162,-0.009 v -0.0018 C 10.1898,3.27798 10.1646,3.20778 10.134,3.1591802 M 7.1496005,2.20878 c 0.0342,-0.0378 0.09,-0.0396 0.1278,-0.0072 0.2502,0.2268 0.3852,0.4698 0.3906,0.4806 0.0252,0.0432 0.009,0.0972 -0.0342,0.1224 -0.0144,0.0072 -0.0288,0.0108 -0.0432,0.0108 -0.0324,0 -0.063,-0.018 -0.0792,-0.0468 -0.0018,-0.0018 -0.1278,-0.2268 -0.3546,-0.4338 -0.037801,-0.0324 -0.0396,-0.09 -0.0072,-0.126 m -1.5156002,1.2258 c -0.0036,0 -0.0558,0.009 -0.1584,0.009 -0.081,0 -0.1908,-0.0054 -0.3312,-0.0234 -0.0504,-0.0054 -0.0846,-0.0504 -0.0774,-0.1008 0.0054,-0.0486 0.0504,-0.0828 0.1008,-0.0774 0.2916,0.0378 0.4338,0.0162 0.4356,0.0162 0.0486,-0.009 0.0954,0.0234 0.1026,0.0738 0.009,0.0486 -0.0234,0.0936 -0.072,0.1026 M 7.8156,4.51998 c -0.1872,0.2214 -0.2844,0.261 -0.432,0.3204 l -0.0468,0.0198 c -0.0108,0.0054 -0.0234,0.0072 -0.0342,0.0072 -0.036,0 -0.0684,-0.0216 -0.0828,-0.0558 -0.0198,-0.045 0.0018,-0.099 0.0486,-0.117 l 0.0468,-0.0198 c 0.135,-0.0558 0.2034,-0.0846 0.3636,-0.27 0.0324,-0.0396 0.09,-0.0432 0.1278,-0.0108 0.0378,0.0324 0.0414,0.0882 0.009,0.126 z\u0027       id\u003d\u0027path99\u0027       style\u003d\u0027fill:%23008000;fill-opacity:1\u0027 /%3E    %3Cpath       d\u003d\u0027m 5.7060003,3.33198 c 0.009,0.0486 -0.0234,0.0936 -0.072,0.1026 -0.0036,0 -0.0558,0.009 -0.1584,0.009 -0.081,0 -0.1908,-0.0054 -0.3312,-0.0234 -0.0504,-0.0054 -0.0846,-0.0504 -0.0774,-0.1008 0.0054,-0.0486 0.0504,-0.0828 0.1008,-0.0774 0.2916,0.0378 0.4338,0.0162 0.4356,0.0162 0.0486,-0.009 0.0954,0.0234 0.1026,0.0738 z\u0027       id\u003d\u0027path101\u0027 /%3E  %3C/g%3E%3C/svg%3E"
+    },
+    "description": "A PDF document is generated for an office (Word, OpenOffice) document",
+    "appliesTo": [
+      "bpmn:Task"
+    ],
+    "groups": [
+      {
+        "id": "Input",
+        "label": "Input"
+      },
+      {
+        "id": "Output",
+        "label": "Output"
+      }
+    ],
+    "id": "io.camunda.cherry.pdf.OfficeToPdfFacade",
+    "category": {
+      "id": "connectors",
+      "name": "connectors"
+    },
+    "documentationRef": "https://docs.camunda.io/docs/components/modeler/web-modeler/connectors/available-connectors/template/",
+    "elementType": {
+      "value": "bpmn:ServiceTask"
+    },
+    "properties": [
+      {
+        "value": "c-pdf-convert-to",
+        "binding": {
+          "type": "zeebe:taskDefinition:type"
+        },
+        "type": "Hidden"
+      },
+      {
+        "value": "result",
+        "binding": {
+          "type": "zeebe:taskHeader",
+          "key": "resultVariable"
+        },
+        "type": "Hidden"
+      },
+      {
+        "description": "FileVariable for the file to convert",
+        "binding": {
+          "type": "zeebe:input",
+          "name": "sourceFileVariable"
+        },
+        "id": "sourceFileVariable",
+        "label": "Source file",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "group": "Input"
+      },
+      {
+        "description": "Destination file name",
+        "binding": {
+          "type": "zeebe:input",
+          "name": "destinationFileName"
+        },
+        "id": "destinationFileName",
+        "label": "Destination file name",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "group": "Input"
+      },
+      {
+        "description": "Storage Definition use to describe how to save the file",
+        "binding": {
+          "type": "zeebe:input",
+          "name": "destinationStorageDefinition_optional"
+        },
+        "id": "destinationStorageDefinition_optional",
+        "label": "Provide Destination storage definition?",
+        "type": "Dropdown",
+        "choices": [
+          {
+            "value": "true",
+            "name": "Yes"
+          },
+          {
+            "value": "false",
+            "name": "No"
+          }
+        ],
+        "value": "false",
+        "group": "Input"
+      },
+      {
+        "condition": {
+          "property": "destinationStorageDefinition_optional",
+          "equals": "true"
+        },
+        "description": "Storage Definition use to describe how to save the file",
+        "binding": {
+          "type": "zeebe:input",
+          "name": "destinationStorageDefinition"
+        },
+        "id": "destinationStorageDefinition",
+        "label": "Destination storage definition",
+        "type": "String",
+        "value": "JSON",
+        "group": "Input"
+      },
+      {
+        "description": "FileVariable converted (a File Variable Reference)",
+        "binding": {
+          "type": "zeebe:input",
+          "name": "pdfFileVariable_optional"
+        },
+        "id": "pdfFileVariable_optional",
+        "label": "Saved Destination file?",
+        "type": "Dropdown",
+        "choices": [
+          {
+            "value": "true",
+            "name": "Yes"
+          },
+          {
+            "value": "false",
+            "name": "No"
+          }
+        ],
+        "value": "false",
+        "group": "Output"
+      },
+      {
+        "condition": {
+          "property": "pdfFileVariable_optional",
+          "equals": "true"
+        },
+        "description": "FileVariable converted (a File Variable Reference)",
+        "binding": {
+          "type": "zeebe:output",
+          "source": "\u003d result.pdfFileVariable"
+        },
+        "id": "pdfFileVariable",
+        "label": "Destination file",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "group": "Output"
+      }
+    ]
+  }
+]
