@@ -22,9 +22,11 @@ import io.camunda.connector.api.outbound.OutboundConnectorFunction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@OutboundConnector(name = "OfficeToPdf", inputVariables = { OfficeToPdfInput.INPUT_SOURCE_FILE_VARIABLE,
+@OutboundConnector(name = "OfficeToPdf", inputVariables = {
+    OfficeToPdfInput.INPUT_SOURCE_FILE_VARIABLE,
     OfficeToPdfInput.INPUT_DESTINATION_FILE_NAME,
-    OfficeToPdfInput.INPUT_DESTINATION_STORAGEDEFINITION }, type = "c-pdf-convert-to")
+    OfficeToPdfInput.INPUT_DESTINATION_STORAGEDEFINITION },
+    type = OfficeToPdfFunction.TYPE_PDF_CONVERT_TO)
 public class OfficeToPdfFunction implements OutboundConnectorFunction {
   Logger logger = LoggerFactory.getLogger(OfficeToPdfFunction.class.getName());
   /**
@@ -36,7 +38,7 @@ public class OfficeToPdfFunction implements OutboundConnectorFunction {
   /**
    * Topic for this connector
    */
-  public static final String WORKERTYPE_PDF_CONVERT_TO = "c-pdf-convert-to";
+  public static final String TYPE_PDF_CONVERT_TO = "c-pdf-convert-to";
 
   @Override
   public OfficeToPdfOutput execute(OutboundConnectorContext context) throws Exception {
@@ -47,13 +49,16 @@ public class OfficeToPdfFunction implements OutboundConnectorFunction {
           "Connector [" + getName() + "] cannot read file[" + OfficeToPdfInput.INPUT_SOURCE_FILE_VARIABLE + "]");
     }
     FileRepoFactory fileVariableFactory = FileRepoFactory.getInstance();
-    FileVariableReference docSourceReference = null;
+    FileVariableReference docSourceReference = FileVariableReference.fromJson(officeInput.getSourceFileVariable());
+    FileVariable docSource = fileVariableFactory.loadFileVariable(docSourceReference);
+    byte[] docContent = docSource.getValue();
+
     try {
 
       // Load the source document
       docSourceReference = FileVariableReference.fromJson(officeInput.getSourceFileVariable());
-      FileVariable docSource = fileVariableFactory.loadFileVariable(docSourceReference);
-      logger.info("OfficeToPdf: load file [" + FileVariableReference.getIdentification(docSourceReference) + "]");
+      FileVariable docSource2 = fileVariableFactory.loadFileVariable(docSourceReference);
+      logger.info("OfficeToPdf: load file [" + FileVariableReference.getIdentification(docSourceReference) + "] :"+ docContent.toString());
 
       // build the report
       final IXDocReport report;
@@ -71,8 +76,7 @@ public class OfficeToPdfFunction implements OutboundConnectorFunction {
       } else {
         storageDefinitionDestination = StorageDefinition.getFromString(officeInput.getDestinationStorageDefinition());
       }
-      FileVariable docPdf = fileVariableFactory.createFileVariable(storageDefinitionDestination);
-
+      FileVariable docPdf = fileVariableFactory.createFileVariable(docSource.getStorageDefinition());
       docPdf.setValue(out.toByteArray());
       docPdf.setName(officeInput.getDestinationFileName());
       FileVariableReference docPdfReference = fileVariableFactory.saveFileVariable(docPdf);

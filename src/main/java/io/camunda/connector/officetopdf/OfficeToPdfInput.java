@@ -1,5 +1,7 @@
 package io.camunda.connector.officetopdf;
 
+import io.camunda.connector.api.annotation.Secret;
+
 import javax.validation.constraints.NotEmpty;
 
 public class OfficeToPdfInput {
@@ -9,7 +11,6 @@ public class OfficeToPdfInput {
 
   public static final String INPUT_DESTINATION_FILE_NAME = "destinationFileName";
   @NotEmpty String destinationFileName;
-
 
   public static final String INPUT_DESTINATION_STORAGEDEFINITION = "destinationStorageDefinition";
   String destinationStorageDefinition;
