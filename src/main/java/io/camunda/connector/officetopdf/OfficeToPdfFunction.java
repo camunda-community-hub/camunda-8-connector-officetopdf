@@ -1,9 +1,9 @@
 package io.camunda.connector.officetopdf;
 
-import io.camunda.file.storage.FileVariable;
-import io.camunda.file.storage.FileRepoFactory;
-import io.camunda.file.storage.FileVariableReference;
-import io.camunda.file.storage.StorageDefinition;
+import io.camunda.filestorage.FileVariable;
+import io.camunda.filestorage.FileRepoFactory;
+import io.camunda.filestorage.FileVariableReference;
+import io.camunda.filestorage.StorageDefinition;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
