@@ -20,7 +20,7 @@
     <connector-core.version>0.4.0</connector-core.version>
     <connector-validation.version>0.4.0</connector-validation.version>
 
-    <!-- Access file -->
+    <!-- file storage -->
     <filestorage.version>1.1.0</filestorage.version>
 
     <!-- external libraries -->
