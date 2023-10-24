@@ -2,7 +2,7 @@
 
 
 To test it:
-1/ deploy the officeToPdf.bpm process
+1/ deploy the officeToPdf.bpmn process
 2/ Deploy the connector on a runtime 
 3/ Create a process instance
 
