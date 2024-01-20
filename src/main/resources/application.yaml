@@ -1,0 +1,15 @@
+# This file is used by the Cherry Runtime, for debugging
+# Add the Cherry library in the pom.wml, start the application io.camunda.CherryApplication.CherryApplication,
+# and the connector is up and running and can be debugged
+
+# The cherry runtime use this configuration to connect a local Zeebe Engine
+zeebe.client:
+  broker.gateway-address: http://localhost:26500
+  # zeebe.client.broker.gateway-address=host.docker.internal:26500
+  security:
+    plaintext: false
+
+server.port: 9081
+logging.level.root: INFO
+logging.level.io.camunda.cherry: INFO
+
