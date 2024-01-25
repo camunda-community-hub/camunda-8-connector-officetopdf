@@ -17,7 +17,6 @@ import io.camunda.filestorage.FileVariableReference;
 import io.camunda.filestorage.StorageDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -30,7 +29,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
-@Component
+
 @OutboundConnector(name = "OfficeToPDF", inputVariables = { OfficeToPdfInput.INPUT_SOURCE_FILE_VARIABLE,
     OfficeToPdfInput.INPUT_DESTINATION_FILE_NAME,
     OfficeToPdfInput.INPUT_DESTINATION_STORAGEDEFINITION }, type = OfficeToPdfFunction.TYPE_PDF_CONVERT_TO)
