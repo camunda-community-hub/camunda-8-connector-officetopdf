@@ -38,6 +38,15 @@
     <plugin.version.maven-surefire-plugin>3.2.2</plugin.version.maven-surefire-plugin>
   </properties>
 
+  <!-- Push the library to Maven -->
+  <!-- Visit https://github.com/camunda-community-hub/community-action-maven-release -->
+  <parent>
+    <groupId>org.camunda.community</groupId>
+    <artifactId>community-hub-release-parent</artifactId>
+    <version>1.4.2</version>
+  </parent>
+
+
   <dependencies>
     <dependency>
       <groupId>io.camunda.connector</groupId>
