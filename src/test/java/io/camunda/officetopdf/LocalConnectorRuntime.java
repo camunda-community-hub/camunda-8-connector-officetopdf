@@ -1,4 +1,4 @@
-package io.camunda.connector;
+package io.camunda.officetopdf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

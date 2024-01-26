@@ -16,22 +16,43 @@ public interface CherryConnector {
 
   /**
    * return a description of the connector
+   *
    * @return the description
    */
   String getDescription();
 
   /**
-   * Reuturn the logo
+   * Return the logo
+   *
    * @return the log (AVG string)
    */
   String getLogo();
 
   /**
    * Return the collection name of the connector
+   *
    * @return the collection name
    */
   String getCollectionName();
 
+  /*
+  return a list of BPMN Errors
+  Map of BPMN_ERROR_CODE, Explanation
+   */
+  Map<String, String> getListBpmnErrors();
 
-  Map<String,String> getBpmnErrors();
+  /**
+   * return a CherryOutput class to describe the Input
+   *
+   * @return a CherryInput class
+   */
+  Class<CherryInput> getInputParameterClass();
+
+  /**
+   * return a CherryOutput class to describe the output
+   *
+   * @return a CherryOutput class
+   */
+  Class<CherryOutput> getOutputParameterClass();
+
 }

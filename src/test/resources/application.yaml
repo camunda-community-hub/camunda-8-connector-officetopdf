@@ -1,12 +1,14 @@
-# Configuration for running connectors locally in bundle with connector-runtime
-# server.port=9898
-#zeebe.client.broker.gateway-address=localhost:26500
-#zeebe.client.security.plaintext=true
+# Configuration for running connectors in bundle with connector-runtime
+
+# Cloud connection
+# zeebe.client.cloud:
+#    region=bru-2
+#    clusterId=4b421869-b847-44af-95b5-f9bb544276e2
+#    clientId=s_00ieW1fWvtXhIcUCZKeat3NgMT7UTk
+#    clientSecret=caKKeGoD6-VF_.n3np0N~vve38H1CW0nEIzAp5z.6yHi3MNLv~fy2.O.WVwAyN4a
 
 
-
-
-# Configuration for Operate Keycloak auth (for use with docker-compose.yml)
+# local connection
 zeebe.client:
   broker.gateway-address: 127.0.0.1:26500
   # zeebe.client.broker.gateway-address=host.docker.internal:26500
@@ -14,16 +16,8 @@ zeebe.client:
   # https://github.com/camunda-community-hub/spring-zeebe#configuring-camunda-platform-8-saas-connection
   # https://github.com/camunda-community-hub/spring-zeebe#additional-configuration-options
 
-
-# SaaS Connection
-#zeebe.client.cloud.cluster-id=
-#zeebe.client.cloud.client-id=
-#zeebe.client.cloud.client-secret=
-#zeebe.client.cloud.region=
-
-
-# Configuration for Operate basic auth (for use with docker-compose-core.yml, no keycloak)
-
-#camunda.operate.client.url=http://localhost:8081
-#camunda.operate.client.username=demo
-#camunda.operate.client.password=demo
+# Don't run the operate connection (not a inbound connection)
+camunda.connector.polling.enabled: false
+camunda.connector.webhook.enabled: false
+spring.main.web-application-type: none
+operate.client.enabled: false
