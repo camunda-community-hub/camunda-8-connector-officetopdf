@@ -31,5 +31,4 @@ public class OfficeToPdfOutput {
         "explanation", "FileVariable converted (a File Variable Reference)"));
   }
 
-
 }
