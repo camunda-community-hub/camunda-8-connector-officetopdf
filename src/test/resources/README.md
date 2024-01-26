@@ -1,11 +1,27 @@
 # Run the test
 
+## Test it
 
 To test it:
-1/ deploy the officeToPdf.bpmn process
-2/ Deploy the connector on a runtime 
-3/ Create a process instance
 
+### Specify a Zeebe server
+Check the file src/test/resources/application.yaml and set up the configuration to connect a Zeebe server
+
+## Deploy the process
+Deploy the officeToPdf.bpmn process
+
+![](officeToPdf.png)
+
+## Start the LocalConnectorRuntime
+Source is located io.camunda.officetopdf.LocalConnectorRuntime. Start it.
+
+
+## Create a process instance
+Two tasks will be executed, and the process instance will show up in the Review Document. 
+PDF are saved in the temporary folder of the machine.
+
+
+## Information
 The connector load a WORD and a OPENOFFICE file from Internet
 
 The Source File is :
