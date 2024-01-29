@@ -10,7 +10,7 @@ Check the file src/test/resources/application.yaml and set up the configuration 
 ## Deploy the process
 Deploy the officeToPdf.bpmn process
 
-![](officeToPdf.png)
+![OfficeToPdf.bpmn](officeToPdf.png)
 
 ## Start the LocalConnectorRuntime
 Source is located io.camunda.officetopdf.LocalConnectorRuntime. Start it.
