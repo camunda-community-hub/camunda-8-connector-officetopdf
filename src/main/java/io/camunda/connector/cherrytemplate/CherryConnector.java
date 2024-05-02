@@ -10,6 +10,7 @@ package io.camunda.connector.cherrytemplate;
 /*  the connector                                                       */
 /* ******************************************************************** */
 
+import java.util.List;
 import java.util.Map;
 
 public interface CherryConnector {
@@ -55,4 +56,13 @@ public interface CherryConnector {
    */
   Class<CherryOutput> getOutputParameterClass();
 
+  /**
+   * on which BPMN item this event can apply. Return a list like
+   * "bpmn:Task",
+   * "bpmn:IntermediateThrowEvent",
+   * "bpmn:IntermediateCatchEvent"
+   *
+   * @return list of bpmn item
+   */
+  List<String> appliesTo();
 }

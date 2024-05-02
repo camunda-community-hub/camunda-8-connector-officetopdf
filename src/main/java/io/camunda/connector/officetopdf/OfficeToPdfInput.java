@@ -11,6 +11,9 @@ import java.util.Map;
 
 /**
  * The Cherry Input is not mandatory, this is just a guideline
+ *
+ * the JsonIgnoreProperties is mandatory: the template may contain additional widget to help the designer, especially on the OPTIONAL parameters
+ * This avoids the MAPPING Exception
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OfficeToPdfInput implements CherryInput {
@@ -23,8 +26,10 @@ public class OfficeToPdfInput implements CherryInput {
   public static final String CLASS = "class";
   public static final String LEVEL = "level";
   public static final String EXPLANATION = "explanation";
-  @NotEmpty String sourceFileVariable;
-  @NotEmpty String destinationFileName;
+  @NotEmpty
+  String sourceFileVariable;
+  @NotEmpty
+  String destinationFileName;
   String destinationStorageDefinition;
 
   public String getSourceFileVariable() {
@@ -44,7 +49,7 @@ public class OfficeToPdfInput implements CherryInput {
   /**
    * this method is exploded by Cherry Runtime to produce a nice element-template
    *
-   * @return list of parameter
+   * @return list of parameters
    */
   public List<Map<String, Object>> getInputParameters() {
     return Arrays.asList(Map.of(NAME, OfficeToPdfInput.INPUT_SOURCE_FILE_VARIABLE, // name

@@ -6,34 +6,39 @@
   <groupId>io.camunda.connector</groupId>
   <artifactId>office-to-pdf</artifactId>
   <packaging>jar</packaging>
-  <version>1.1.1-SNAPSHOT</version>
+  <!-- 1.1.2 -->
+  <!-- 1.2.0 Move to 8.5.0 -->
+  <version>1.2.0</version>
 
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+
     <!-- connector SDK version -->
-    <version.connectors>8.3.1</version.connectors>
+    <version.connector-core>8.5.0</version.connector-core>
+    <version.connector-runtime>8.5.0</version.connector-runtime>
 
     <version.opensagres>2.0.4</version.opensagres>
     <version.filestorage>1.2.0</version.filestorage>
 
     <!-- external libraries -->
-    <version.assertj>3.24.2</version.assertj>
-    <version.junit-jupiter>5.10.1</version.junit-jupiter>
-    <version.mockito>5.7.0</version.mockito>
-    <version.slf4j>2.0.9</version.slf4j>
+    <version.assertj>3.25.3</version.assertj>
+    <version.junit-jupiter>5.10.2</version.junit-jupiter>
+    <version.mockito>5.11.0</version.mockito>
+    <version.slf4j>2.0.12</version.slf4j>
+    <version.jackson>2.17.0</version.jackson>
 
     <!-- maven plugins -->
     <plugin.version.maven-clean-plugin>3.3.2</plugin.version.maven-clean-plugin>
-    <plugin.version.maven-compiler-plugin>3.11.0</plugin.version.maven-compiler-plugin>
+    <plugin.version.maven-compiler-plugin>3.13.0</plugin.version.maven-compiler-plugin>
     <plugin.version.maven-dependency-plugin>3.6.1</plugin.version.maven-dependency-plugin>
     <plugin.version.maven-install-plugin>3.1.1</plugin.version.maven-install-plugin>
     <plugin.version.maven-jar-plugin>3.3.0</plugin.version.maven-jar-plugin>
     <plugin.version.maven-resources-plugin>3.3.1</plugin.version.maven-resources-plugin>
-    <plugin.version.maven-shade-plugin>3.5.1</plugin.version.maven-shade-plugin>
-    <plugin.version.maven-surefire-plugin>3.2.2</plugin.version.maven-surefire-plugin>
+    <plugin.version.maven-shade-plugin>3.5.2</plugin.version.maven-shade-plugin>
+    <plugin.version.maven-surefire-plugin>3.2.5</plugin.version.maven-surefire-plugin>
   </properties>
 
   <!-- Push the library to Maven -->
@@ -49,29 +54,27 @@
     <dependency>
       <groupId>io.camunda.connector</groupId>
       <artifactId>connector-core</artifactId>
-      <version>${version.connectors}</version>
+      <version>${version.connector-core}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.camunda.connector</groupId>
       <artifactId>connector-validation</artifactId>
-      <version>${version.connectors}</version>
+      <version>${version.connector-core}</version>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.17.0</version> <!-- Replace {version} with the desired version -->
+    </dependency>
+
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>${version.slf4j}</version>
     </dependency>
-
-    <!-- Element template generator annotations (compile-time only) -->
-    <dependency>
-      <groupId>io.camunda.connector</groupId>
-      <artifactId>element-template-generator-core</artifactId>
-      <version>${version.connectors}</version>
-      <optional>true</optional>
-    </dependency>
-
 
     <!-- Access file  -->
     <dependency>
@@ -147,13 +150,6 @@
 
     <!-- test dependencies -->
     <dependency>
-      <groupId>io.camunda.connector</groupId>
-      <artifactId>connector-test</artifactId>
-      <version>${version.connectors}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <version>${version.junit-jupiter}</version>
@@ -185,7 +181,7 @@
     <dependency>
       <groupId>io.camunda.connector</groupId>
       <artifactId>spring-boot-starter-camunda-connectors</artifactId>
-      <version>${version.connectors}</version>
+      <version>${version.connector-runtime}</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -195,6 +191,7 @@
       </exclusions>
     </dependency>
   </dependencies>
+
 
   <build>
     <pluginManagement>
@@ -255,40 +252,22 @@
             </filters>
             <transformers>
               <!-- This is needed if you have dependencies that use Service Loader. Most Google Cloud client libraries does. -->
-              <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+              <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
               <!-- This is needed to not repeat licenses in the META-INF directory -->
-              <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
+              <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer"/>
               <!-- This is needed to merge existing NOTICE files and keep them downstream -->
               <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
                 <addHeader>false</addHeader>
               </transformer>
-              <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" />
+              <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"/>
             </transformers>
-            <!-- Uncomment and adjust to use relocations inside your JAR -->
-            <!--<relocations>
-              <relocation>
-                <pattern>com.fasterxml.jackson</pattern>
-                <shadedPattern>myconnector.com.fasterxml.jackson</shadedPattern>
-              </relocation>
-            </relocations>-->
+
           </configuration>
           <executions>
             <execution>
               <phase>package</phase>
               <goals>
                 <goal>shade</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>io.camunda.connector</groupId>
-          <artifactId>element-template-generator-maven-plugin</artifactId>
-          <version>${version.connectors}</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>generate-templates</goal>
               </goals>
             </execution>
           </executions>
@@ -306,7 +285,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
       </plugin>
-
     </plugins>
   </build>
 

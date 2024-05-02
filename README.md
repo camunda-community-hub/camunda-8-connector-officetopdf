@@ -38,7 +38,6 @@ If the **destinationStorageDefinition** is not provided, then the storage of the
 | pdfFileVariable  | FileVariable converted (a File Variable Reference)  | java.lang.Object  | REQUIRED |
 
 ## BPMN Errors
-
 | Name             | Explanation       |
 |------------------|-------------------|
 | LOAD_FILE_ERROR  | Load File error   |

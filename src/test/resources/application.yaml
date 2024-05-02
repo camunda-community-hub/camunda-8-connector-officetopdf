@@ -14,7 +14,7 @@ zeebe.client:
   # zeebe.client.broker.gateway-address=host.docker.internal:26500
   security.plaintext: true
 
-# Don't run the operate connection (not a inbound connection)
+# Don't run the connection to Operate (not an inbound connection)
 camunda.connector.polling.enabled: false
 camunda.connector.webhook.enabled: false
 spring.main.web-application-type: none
