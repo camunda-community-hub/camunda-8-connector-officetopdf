@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
-  "name": "Office to PDF",
+  "name": "OfficeToPDF",
   "id": "io.camunda.connector.officetopdf.OfficeToPdfFunction",
   "description": "A PDF document is generated for an office (Word, OpenOffice) document",
   "documentationRef": "https://docs.camunda.io/docs/components/modeler/web-modeler/connectors/available-connectors/template/",
