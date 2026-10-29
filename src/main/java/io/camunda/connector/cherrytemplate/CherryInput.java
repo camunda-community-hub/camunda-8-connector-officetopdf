@@ -5,29 +5,31 @@ import java.util.Map;
 
 public interface CherryInput {
 
-  /** These constant map PARAMETER_NAME_xxx constant in SDKRunnerCherryConnector */
+    /**
+     * These constant map PARAMETER_NAME_xxx constant in SDKRunnerCherryConnector
+     */
 
-  static final String PARAMETER_MAP_NAME = "name";
-  static final String PARAMETER_MAP_LABEL = "label";
-  static final String PARAMETER_MAP_CLASS = "class";
-  static final String PARAMETER_MAP_LEVEL = "level";
-  static final String PARAMETER_MAP_LEVEL_REQUIRED = "REQUIRED";
-  static final String PARAMETER_MAP_LEVEL_OPTIONAL = "OPTIONAL";
-  static final String PARAMETER_MAP_EXPLANATION = "explanation";
-  static final String PARAMETER_MAP_DEFAULT_VALUE = "defaultValue";
-  static final String PARAMETER_MAP_CONDITION_PROPERTY = "conditionProperty";
-  static final String PARAMETER_MAP_GSON_TEMPLATE = "gsonTemplate";
-  static final String PARAMETER_MAP_CONDITION_ONE_OF = "conditionOneOf";
-  static final String PARAMETER_MAP_CHOICE_LIST = "choiceList";
-  static final String PARAMETER_MAP_CHOICE_LIST_CODE = "code";
-  static final String PARAMETER_MAP_CHOICE_LIST_DISPLAY_NAME = "displayName";
-  static final String PARAMETER_MAP_VISIBLE_IN_TEMPLATE = "visibleInTemplate";
+    String PARAMETER_MAP_NAME = "name";
+    String PARAMETER_MAP_LABEL = "label";
+    String PARAMETER_MAP_CLASS = "class";
+    String PARAMETER_MAP_LEVEL = "level";
+    String PARAMETER_MAP_LEVEL_REQUIRED = "REQUIRED";
+    String PARAMETER_MAP_LEVEL_OPTIONAL = "OPTIONAL";
+    String PARAMETER_MAP_EXPLANATION = "explanation";
+    String PARAMETER_MAP_DEFAULT_VALUE = "defaultValue";
+    String PARAMETER_MAP_CONDITION_PROPERTY = "conditionProperty";
+    String PARAMETER_MAP_GSON_TEMPLATE = "gsonTemplate";
+    String PARAMETER_MAP_CONDITION_ONE_OF = "conditionOneOf";
+    String PARAMETER_MAP_CHOICE_LIST = "choiceList";
+    String PARAMETER_MAP_CHOICE_LIST_CODE = "code";
+    String PARAMETER_MAP_CHOICE_LIST_DISPLAY_NAME = "displayName";
+    String PARAMETER_MAP_VISIBLE_IN_TEMPLATE = "visibleInTemplate";
 
-  /**
-   * get the list of Input Parameters
-   *
-   * @return list of Map. Map contains key "name", "label", "defaultValue", "class", "level", "explanation"
-   */
-  List<Map<String, Object>> getInputParameters();
+    /**
+     * get the list of Input Parameters
+     *
+     * @return list of Map. Map contains key "name", "label", "defaultValue", "class", "level", "explanation"
+     */
+    List<Map<String, Object>> getInputParameters();
 
 }
